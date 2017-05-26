@@ -1,5 +1,3 @@
-'use strict';
-
 import angular from 'angular';
 import phone from './phone/phone.module';
 import checkmarkFilter from './checkmark/checkmark.filter';

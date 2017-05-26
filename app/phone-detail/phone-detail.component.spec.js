@@ -1,5 +1,3 @@
-'use strict';
-
 describe('phoneDetail', function() {
 
   // Load the module that contains the `phoneDetail` component before each test

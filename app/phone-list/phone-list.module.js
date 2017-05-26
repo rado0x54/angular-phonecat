@@ -1,5 +1,3 @@
-'use strict';
-
 import angular from 'angular'
 import phone from '../core/phone/phone.module'
 import phoneListComponent from './phone-list.component';

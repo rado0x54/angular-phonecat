@@ -1,5 +1,3 @@
-'use strict';
-
 describe('Phone', function() {
   var $httpBackend;
   var Phone;

@@ -1,5 +1,3 @@
-'use strict';
-
 import angular from 'angular';
 import ngRoute from 'angular-route';
 import phone from '../core/phone/phone.module';

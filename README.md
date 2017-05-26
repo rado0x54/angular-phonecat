@@ -1,5 +1,7 @@
 # AngularJS Phone Catalog Tutorial Application
 
+## Note:
+This fork migrates the AngularJS Phone Catalog Tutorial Application to ES6 and utilizes webpack as a bundler.
 
 ## Overview
 

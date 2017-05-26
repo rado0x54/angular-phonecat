@@ -1,5 +1,3 @@
-'use strict';
-
 import angular from 'angular';
 import ngAnimate from 'angular-animate';
 import ngRoute from 'angular-route';
