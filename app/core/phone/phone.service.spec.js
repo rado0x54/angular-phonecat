@@ -1,7 +1,7 @@
 describe('Phone', function() {
-  var $httpBackend;
-  var Phone;
-  var phonesData = [
+  let $httpBackend;
+  let Phone;
+  let phonesData = [
     {name: 'Phone X'},
     {name: 'Phone Y'},
     {name: 'Phone Z'}
@@ -30,7 +30,7 @@ describe('Phone', function() {
   });
 
   it('should fetch the phones data from `/phones/phones.json`', function() {
-    var phones = Phone.query();
+    let phones = Phone.query();
 
     expect(phones).toEqual([]);
 

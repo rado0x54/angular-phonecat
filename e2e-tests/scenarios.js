@@ -15,8 +15,8 @@ describe('PhoneCat Application', function() {
     });
 
     it('should filter the phone list as a user types into the search box', function() {
-      var phoneList = element.all(by.repeater('phone in $ctrl.phones'));
-      var query = element(by.model('$ctrl.query'));
+      let phoneList = element.all(by.repeater('phone in $ctrl.phones'));
+      let query = element(by.model('$ctrl.query'));
 
       expect(phoneList.count()).toBe(20);
 
@@ -29,10 +29,10 @@ describe('PhoneCat Application', function() {
     });
 
     it('should be possible to control phone order via the drop-down menu', function() {
-      var queryField = element(by.model('$ctrl.query'));
-      var orderSelect = element(by.model('$ctrl.orderProp'));
-      var nameOption = orderSelect.element(by.css('option[value="name"]'));
-      var phoneNameColumn = element.all(by.repeater('phone in $ctrl.phones').column('phone.name'));
+      let queryField = element(by.model('$ctrl.query'));
+      let orderSelect = element(by.model('$ctrl.orderProp'));
+      let nameOption = orderSelect.element(by.css('option[value="name"]'));
+      let phoneNameColumn = element.all(by.repeater('phone in $ctrl.phones').column('phone.name'));
 
       function getNames() {
         return phoneNameColumn.map(function(elem) {
@@ -56,7 +56,7 @@ describe('PhoneCat Application', function() {
     });
 
     it('should render phone specific links', function() {
-      var query = element(by.model('$ctrl.query'));
+      let query = element(by.model('$ctrl.query'));
       query.sendKeys('nexus');
 
       element.all(by.css('.phones li a')).first().click();
@@ -76,14 +76,14 @@ describe('PhoneCat Application', function() {
     });
 
     it('should display the first phone image as the main phone image', function() {
-      var mainImage = element(by.css('img.phone.selected'));
+      let mainImage = element(by.css('img.phone.selected'));
 
       expect(mainImage.getAttribute('src')).toMatch(/img\/phones\/nexus-s.0.jpg/);
     });
 
     it('should swap the main image when clicking on a thumbnail image', function() {
-      var mainImage = element(by.css('img.phone.selected'));
-      var thumbnails = element.all(by.css('.phone-thumbs img'));
+      let mainImage = element(by.css('img.phone.selected'));
+      let thumbnails = element.all(by.css('.phone-thumbs img'));
 
       thumbnails.get(2).click();
       expect(mainImage.getAttribute('src')).toMatch(/img\/phones\/nexus-s.2.jpg/);

@@ -5,8 +5,8 @@ describe('phoneDetail', function() {
 
   // Test the controller
   describe('PhoneDetailController', function() {
-    var $httpBackend, ctrl;
-    var xyzPhoneData = {
+    let $httpBackend, ctrl;
+    let xyzPhoneData = {
       name: 'phone xyz',
       images: ['image/url1.png', 'image/url2.png']
     };

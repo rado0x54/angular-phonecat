@@ -18,14 +18,14 @@
 //   });
 
 
-import template from './phone-detail.template.html'
+import template from './phone-detail.template.html';
 
 let phoneDetailComponent = {
     // templateUrl: 'phone-detail/phone-detail.template.html',
     template,
     controller: ['$routeParams', 'Phone',
       function PhoneDetailController($routeParams, Phone) {
-        var self = this;
+        let self = this;
         self.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
           self.setImage(phone.images[0]);
         });
