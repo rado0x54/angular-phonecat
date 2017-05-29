@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const helpers = require('./helpers');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 module.exports = {
@@ -15,8 +16,26 @@ module.exports = {
     },
 
     module: {
-        loaders: [
-            { test: /\.html$/, loader: 'raw-loader' }
+        rules: [
+            { test: /\.html$/, loader: 'raw-loader' },
+            { test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    use: 'css-loader'
+                })
+            },
+            {
+                test: /\.js$/, exclude: /(node_modules)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env']
+                    }
+                }
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                loader: 'file-loader?name=public/fonts/[name].[ext]'
+            }
         ]
     },
     plugins: [
@@ -43,7 +62,15 @@ module.exports = {
         new CopyWebpackPlugin([
                 { from: 'app/phones', to: 'phones' },
                 { from: 'app/img', to: 'img' }
-            ])
+            ]),
+        // Seperate css file, instead of using it inline within js
+        new ExtractTextPlugin({
+            filename: '[name].css'
+        }),
+        // jQuery Support for Angular 1, https://webpack.js.org/plugins/provide-plugin/#usage-jquery-with-angular-1
+        new webpack.ProvidePlugin({
+            'window.jQuery': 'jquery'
+        })
     //
     ]
 };

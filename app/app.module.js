@@ -1,3 +1,10 @@
+// Styling
+import './app.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
+// JS
+import "jquery";
+
 import angular from 'angular';
 import ngAnimate from 'angular-animate';
 import ngRoute from 'angular-route';
@@ -6,6 +13,8 @@ import phoneDetail from './phone-detail/phone-detail.module';
 import phoneList from './phone-list/phone-list.module';
 import routing from './app.config';
 import phoneAnimation from './app.animations';
+
+
 
 // Define the `phonecatApp` module
 angular.module('phonecatApp', [
